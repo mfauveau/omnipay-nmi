@@ -6,7 +6,7 @@ namespace Omnipay\NMI\Message;
 */
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
-    protected $endpoint = 'https://gateway.perpetualpayments.com/api/transact.php';
+    protected $endpoint = 'https://secure.nmi.com/api/transact.php';
 
     public function getUsername()
     {
@@ -151,6 +151,11 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         $httpResponse = $this->httpClient->post($this->getEndpoint(), null, $data)->send();
 
         return $this->response = new DirectPostResponse($this, $httpResponse->getBody());
+    }
+
+    public function setEndpoint($value)
+    {
+        return $this->setParameter('endpoint', $value);
     }
 
     public function getEndpoint()
