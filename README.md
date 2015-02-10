@@ -1,4 +1,4 @@
-# Omnipay: Pacnet
+# Omnipay: NMI
 
 **NMI driver for the Omnipay PHP payment processing library**
 
