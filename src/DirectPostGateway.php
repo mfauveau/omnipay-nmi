@@ -4,7 +4,7 @@ namespace Omnipay\NMI;
 use Omnipay\Common\AbstractGateway;
 
 /**
- * NMI
+ * NMI Direct Post Gateway
  *
  * @link https://www.nmi.com/
  * @link https://gateway.perpetualpayments.com/merchants/resources/integration/integration_portal.php
