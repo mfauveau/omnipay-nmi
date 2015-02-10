@@ -4,7 +4,7 @@ namespace Omnipay\NMI\Message;
 /**
 * NMI Direct Post Void Request
 */
-class DirectPostVoidRequest extends AbstrastRequest
+class DirectPostVoidRequest extends AbstractRequest
 {
     protected $type = 'void';
 

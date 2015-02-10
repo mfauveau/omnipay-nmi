@@ -4,7 +4,7 @@ namespace Omnipay\NMI\Message;
 /**
  * NMI Direct Post Authorize Request
  */
-class DirectPostAuthRequest extends AbstrastRequest
+class DirectPostAuthRequest extends AbstractRequest
 {
     protected $type = 'auth';
 

@@ -81,7 +81,7 @@ class DirectPostGateway extends AbstractGateway {
      * @param  array  $parameters
      * @return \Omnipay\NMI\Message\DirectPostAuthRequest
      */
-    public function auth(array $parameters = array())
+    public function authorize(array $parameters = array())
     {
         return $this->createRequest('\Omnipay\NMI\Message\DirectPostAuthRequest', $parameters);
     }

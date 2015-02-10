@@ -80,13 +80,4 @@ class DirectPostGatewayTest extends GatewayTestCase
 
     }
 
-    public function testUpdateSuccess()
-    {
-
-    }
-
-    public function testUpdateFailure()
-    {
-
-    }
 }

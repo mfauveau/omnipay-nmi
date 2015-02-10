@@ -4,7 +4,7 @@ namespace Omnipay\NMI\Message;
 /**
 * NMI Direct Post Capture Request
 */
-class DirectPostCaptureRequest extends AbstrastRequest
+class DirectPostCaptureRequest extends AbstractRequest
 {
     protected $type = 'capture';
 

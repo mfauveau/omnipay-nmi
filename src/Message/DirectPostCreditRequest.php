@@ -4,7 +4,7 @@ namespace Omnipay\NMI\Message;
 /**
 * NMI Direct Post Credit Request
 */
-class DirectPostCreditRequest extends AbstrastRequest
+class DirectPostCreditRequest extends AbstractRequest
 {
     protected $type = 'credit';
 
