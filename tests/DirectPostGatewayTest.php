@@ -161,4 +161,18 @@ class DirectPostGatewayTest extends GatewayTestCase
         $this->assertSame('Invalid amount REFID:143498834', $response->getMessage());
     }
 
+    public function testCreateCard()
+    {
+
+    }
+
+    public function testUpdateCard()
+    {
+
+    }
+
+    public function testDeleteCard()
+    {
+        
+    }
 }

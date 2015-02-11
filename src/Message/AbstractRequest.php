@@ -82,7 +82,14 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     {
         $data = array();
 
-        $data['type'] = $this->type;
+        if (isset($this->type)) {
+            $data['type'] = $this->type;
+        }
+
+        if (isset($this->customer_vault)) {
+            $data['customer_vault'] = $this->customer_vault;
+        }
+
         $data['username'] = $this->getUsername();
         $data['password'] = $this->getPassword();
 
