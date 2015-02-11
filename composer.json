@@ -1,7 +1,7 @@
 {
     "name": "mfauveau/omnipay-nmi",
     "type": "library",
-    "description": "NMI (Network Merchants International) driver for the Omnipay PHP payment processing library",
+    "description": "NMI (Network Merchants Inc.) driver for the Omnipay PHP payment processing library",
     "keywords": [
         "gateway",
         "merchant",
@@ -10,7 +10,9 @@
         "payment",
         "purchase",
         "nmi",
-        "durango"
+        "durango",
+        "network",
+        "inc"
     ],
     "homepage": "https://github.com/mfauveau/omnipay-nmi",
     "license": "MIT",
