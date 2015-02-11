@@ -1,7 +1,7 @@
 {
     "name": "mfauveau/omnipay-nmi",
     "type": "library",
-    "description": "NMI driver for the Omnipay PHP payment processing library",
+    "description": "NMI (Network Merchants International) driver for the Omnipay PHP payment processing library",
     "keywords": [
         "gateway",
         "merchant",
@@ -21,7 +21,7 @@
         }
     ],
     "autoload": {
-        "psr-0": { "Omnipay\\NMI\\" : "src/" }
+        "psr-4": { "Omnipay\\NMI\\" : "src/" }
     },
     "require": {
         "omnipay/common": "~2.0"
@@ -31,7 +31,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.x-dev"
+            "dev-master": "2.0.x-dev"
         }
     }
 }

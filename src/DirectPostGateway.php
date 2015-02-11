@@ -9,7 +9,8 @@ use Omnipay\Common\AbstractGateway;
  * @link https://www.nmi.com/
  * @link https://gateway.perpetualpayments.com/merchants/resources/integration/integration_portal.php
  */
-class DirectPostGateway extends AbstractGateway {
+class DirectPostGateway extends AbstractGateway
+{
     /**
      * @return string
      */
@@ -63,6 +64,16 @@ class DirectPostGateway extends AbstractGateway {
         return $this->setParameter('password', $value);
     }
 
+    public function purchase(array $parameters = array())
+    {
+        return $this->sale($parameters);
+    }
+
+    public function authorize(array $parameters = array())
+    {
+        return $this->auth($parameters);
+    }
+
     /**
      * Transaction sales are submitted and immediately flagged for settlement.
      * @param  array  $parameters
@@ -81,7 +92,7 @@ class DirectPostGateway extends AbstractGateway {
      * @param  array  $parameters
      * @return \Omnipay\NMI\Message\DirectPostAuthRequest
      */
-    public function authorize(array $parameters = array())
+    public function auth(array $parameters = array())
     {
         return $this->createRequest('\Omnipay\NMI\Message\DirectPostAuthRequest', $parameters);
     }

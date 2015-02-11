@@ -8,6 +8,8 @@ class DirectPostGatewayTest extends GatewayTestCase
     public function setUp()
     {
         parent::setUp();
+
+        $this->gateway = new DirectPostGateway($this->getHttpClient(), $this->getHttpRequest());
     }
 
     public function testSaleSuccess()
