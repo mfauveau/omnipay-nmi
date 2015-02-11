@@ -161,18 +161,71 @@ class DirectPostGatewayTest extends GatewayTestCase
         $this->assertSame('Invalid amount REFID:143498834', $response->getMessage());
     }
 
-    public function testCreateCard()
+    public function testCreateCardSuccess()
     {
+        $this->setMockHttpResponse('DirectPostCreateCardSuccess.txt');
 
+        $response = $this->gateway->createCard($this->purchaseOptions)->send();
+        $this->assertTrue($response->isSuccessful());
+        $this->assertSame('452894459', $response->getCardReference());
+        $this->assertSame('Customer Added', $response->getMessage());
     }
 
-    public function testUpdateCard()
+    public function testCreateCardFailure()
     {
+        $this->setMockHttpResponse('DirectPostCreateCardFailure.txt');
 
+        $response = $this->gateway->createCard($this->purchaseOptions)->send();
+        $this->assertFalse($response->isSuccessful());
+        $this->assertSame(null, $response->getCardReference());
+        $this->assertSame('Invalid Credit Card Number REFID:3150032552', $response->getMessage());
     }
 
-    public function testDeleteCard()
+    public function testUpdateCardSuccess()
     {
-        
+        $this->setMockHttpResponse('DirectPostUpdateCardSuccess.txt');
+
+        $this->purchaseOptions['cardReference'] = '452894459';
+
+        $response = $this->gateway->updateCard($this->purchaseOptions)->send();
+        $this->assertTrue($response->isSuccessful());
+        $this->assertSame('452894459', $response->getCardReference());
+        $this->assertSame('Customer Update Successful', $response->getMessage());
+    }
+
+    public function testUpdateCardFailure()
+    {
+        $this->setMockHttpResponse('DirectPostUpdateCardFailure.txt');
+
+        $this->purchaseOptions['cardReference'] = '000000000';
+
+        $response = $this->gateway->updateCard($this->purchaseOptions)->send();
+        $this->assertFalse($response->isSuccessful());
+        $this->assertSame('000000000', $response->getCardReference());
+        $this->assertSame('Invalid Customer Vault Id REFID:3150033161', $response->getMessage());
+    }
+
+    public function testDeleteCardSuccess()
+    {
+        $this->setMockHttpResponse('DirectPostDeleteCardSuccess.txt');
+
+        $response = $this->gateway->deleteCard(array(
+            'cardReference' => '452894459'
+        ))->send();
+        $this->assertTrue($response->isSuccessful());
+        $this->assertSame(null, $response->getCardReference());
+        $this->assertSame('Customer Deleted', $response->getMessage());
+    }
+
+    public function testDeleteCardFailure()
+    {
+        $this->setMockHttpResponse('DirectPostDeleteCardFailure.txt');
+
+        $response = $this->gateway->deleteCard(array(
+            'cardReference' => '000000000'
+        ))->send();
+        $this->assertFalse($response->isSuccessful());
+        $this->assertSame('000000000', $response->getCardReference());
+        $this->assertSame('Invalid Customer Vault Id REFID:3150033421', $response->getMessage());
     }
 }

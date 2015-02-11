@@ -60,4 +60,13 @@ class DirectPostResponse extends AbstractResponse
     {
         return $this->data['transactionid'];
     }
+
+    public function getCardReference()
+    {
+        if (isset($this->data['customer_vault_id'])) {
+            return trim($this->data['customer_vault_id']);
+        }
+
+        return null;
+    }
 }

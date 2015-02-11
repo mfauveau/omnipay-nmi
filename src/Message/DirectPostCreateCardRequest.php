@@ -20,6 +20,14 @@ class DirectPostCreateCardRequest extends AbstractRequest
         $data['ccexp'] = $this->getCard()->getExpiryDate('my');
         $data['payment'] = 'creditcard';
 
-        return $data;
+        if ('update_customer' === $this->customer_vault) {
+            $data['customer_vault_id'] = $this->getCardReference();
+        }
+
+        return array_merge(
+            $data,
+            $this->getBillingData(),
+            $this->getShippingData()
+        );
     }
 }
