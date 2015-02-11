@@ -3,9 +3,9 @@
 namespace Omnipay\NMI\Message;
 
 /**
-* NMI Update Credit Card Request
+* NMI Direct Post Update Card Request
 */
-class UpdateCardRequest extends CreateCardRequest
+class DirectPostUpdateCardRequest extends DirectPostCreateCardRequest
 {
     protected $customer_vault = 'update_customer';
 }

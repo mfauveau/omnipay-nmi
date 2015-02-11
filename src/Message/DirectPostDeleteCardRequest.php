@@ -3,9 +3,9 @@
 namespace Omnipay\NMI\Message;
 
 /**
-* NMI Delete Credit Card Request
+* NMI Direct Post Delete Card Request
 */
-class DeleteCardRequest extends AbstractRequest
+class DirectPostDeleteCardRequest extends AbstractRequest
 {
     protected $customer_vault = 'delete_customer';
 
