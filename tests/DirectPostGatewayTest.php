@@ -135,7 +135,7 @@ class DirectPostGatewayTest extends GatewayTestCase
 
         $response = $this->gateway->void($this->refundOptions)->send();
         $this->assertFalse($response->isSuccessful());
-        $this->assertSame('2577725848', $response->getTransactionReference());
+        $this->assertSame('', $response->getTransactionReference());
         $this->assertSame('Refund amount may not exceed the transaction balance REFID:143498703', $response->getMessage());
     }
 
