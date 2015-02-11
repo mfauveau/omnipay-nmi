@@ -10,20 +10,28 @@ class DirectPostAuthRequest extends AbstractRequest
 
     public function getData()
     {
-        $this->validate('amount', 'card');
-        $this->getCard()->validate();
+        $this->validate('amount');
 
         $data = $this->getBaseData();
-        $data['ccnumber'] = $this->getCard()->getNumber();
-        $data['ccexp'] = $this->getCard()->getExpiryDate('my');
         $data['amount'] = $this->getAmount();
-        $data['cvv'] = $this->getCard()->getCvv();
 
-        return array_merge(
-            $data,
-            $this->getOrderData(),
-            $this->getBillingData(),
-            $this->getShippingData()
-        );
+        if ($this->getCardReference()) {
+            $data['customer_vault_id'] = $this->getCardReference();
+
+            return $data;
+        } else {
+            $this->getCard()->validate();
+
+            $data['ccnumber'] = $this->getCard()->getNumber();
+            $data['ccexp'] = $this->getCard()->getExpiryDate('my');
+            $data['cvv'] = $this->getCard()->getCvv();
+
+            return array_merge(
+                $data,
+                $this->getOrderData(),
+                $this->getBillingData(),
+                $this->getShippingData()
+            );
+        }
     }
 }
