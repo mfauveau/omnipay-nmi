@@ -160,15 +160,4 @@ class DirectPostGateway extends AbstractGateway
     {
         return $this->createRequest('\Omnipay\NMI\Message\DirectPostCreditRequest', $parameters);
     }
-
-    /**
-     * This action is used for doing an "Account Verification" on the
-     * cardholder's credit card without actually doing an authorization.
-     * @param  array  $parameters
-     * @return \Omnipay\NMI\Message\DirectPostValidateRequest
-     */
-    public function validate(array $parameters = array())
-    {
-        return $this->createRequest('\Omnipay\NMI\Message\DirectPostValidateRequest', $parameters);
-    }
 }

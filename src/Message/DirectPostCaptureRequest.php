@@ -11,7 +11,6 @@ class DirectPostCaptureRequest extends AbstractRequest
     public function getData()
     {
         $this->validate('transactionReference');
-        $this->getCard()->validate();
 
         $data = $this->getBaseData();
         $data['transactionid'] = $this->getTransactionReference();
