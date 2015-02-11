@@ -64,6 +64,23 @@ class DirectPostGateway extends AbstractGateway
         return $this->setParameter('password', $value);
     }
 
+    /**
+     * @return string
+     */
+    public function getEndpoint()
+    {
+        return $this->endpoint;
+    }
+
+    /**
+     * @param  string $value
+     * @return $this
+     */
+    public function setEndpoint($value)
+    {
+        return $this->setParameter('endpoint', $value);
+    }
+
     public function purchase(array $parameters = array())
     {
         return $this->sale($parameters);
