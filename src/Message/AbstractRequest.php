@@ -106,6 +106,9 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         $data['shipping'] = $this->getShipping();
         $data['ponumber'] = $this->getPONumber();
         $data['ipaddress'] = $this->getClientIp();
+        if ($this->getCurrency()) {
+            $data['currency'] = $this->getCurrency();
+        }
 
         return $data;
     }
