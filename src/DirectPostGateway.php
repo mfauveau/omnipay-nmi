@@ -67,6 +67,206 @@ class DirectPostGateway extends AbstractGateway
     /**
      * @return string
      */
+    public function getProcessorId()
+    {
+        return $this->getParameter('processor_id');
+    }
+
+    /**
+     * @param  string $value
+     * @return $this
+     */
+    public function setProcessorId($value)
+    {
+        return $this->setParameter('processor_id', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthorizationCode()
+    {
+        return $this->getParameter('authorization_code');
+    }
+
+    /**
+     * @param  string $value
+     * @return $this
+     */
+    public function setAuthorizationCode($value)
+    {
+        return $this->setParameter('authorization_code', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptor()
+    {
+        return $this->getParameter('descriptor');
+    }
+
+    /**
+     * @param  string $value
+     * @return $this
+     */
+    public function setDescriptor($value)
+    {
+        return $this->setParameter('descriptor', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptorPhone()
+    {
+        return $this->getParameter('descriptor_phone');
+    }
+
+    /**
+     * @param  string $value
+     * @return $this
+     */
+    public function setDescriptorPhone($value)
+    {
+        return $this->setParameter('descriptor_phone', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptorAddress()
+    {
+        return $this->getParameter('descriptor_address');
+    }
+
+    /**
+     * @param  string $value
+     * @return $this
+     */
+    public function setDescriptorAddress($value)
+    {
+        return $this->setParameter('descriptor_address', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptorCity()
+    {
+        return $this->getParameter('descriptor_city');
+    }
+
+    /**
+     * @param  string $value
+     * @return $this
+     */
+    public function setDescriptorCity($value)
+    {
+        return $this->setParameter('descriptor_city', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptorState()
+    {
+        return $this->getParameter('descriptor_state');
+    }
+
+    /**
+     * @param  string $value
+     * @return $this
+     */
+    public function setDescriptorState($value)
+    {
+        return $this->setParameter('descriptor_state', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptorPostal()
+    {
+        return $this->getParameter('descriptor_postal');
+    }
+
+    /**
+     * @param  string $value
+     * @return $this
+     */
+    public function setDescriptorPostal($value)
+    {
+        return $this->setParameter('descriptor_postal', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptorCountry()
+    {
+        return $this->getParameter('descriptor_country');
+    }
+
+    /**
+     * @param  string $value
+     * @return $this
+     */
+    public function setDescriptorCountry($value)
+    {
+        return $this->setParameter('descriptor_country', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptorMcc()
+    {
+        return $this->getParameter('descriptor_mcc');
+    }
+
+    /**
+     * @param  string $value
+     * @return $this
+     */
+    public function setDescriptorMcc($value)
+    {
+        return $this->setParameter('descriptor_mcc', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptorMerchantId()
+    {
+        return $this->getParameter('descriptor_merchant_id');
+    }
+
+    /**
+     * @param  string $value
+     * @return $this
+     */
+    public function setDescriptorMerchantId($value)
+    {
+        return $this->setParameter('descriptor_merchant_id', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescriptorUrl()
+    {
+        return $this->getParameter('descriptor_url');
+    }
+
+    public function setDescriptorUrl($value)
+    {
+        return $this->setParameter('descriptor_url', $value);
+    }
+
+    /**
+     * @return string
+     */
     public function getEndpoint()
     {
         return $this->endpoint;
