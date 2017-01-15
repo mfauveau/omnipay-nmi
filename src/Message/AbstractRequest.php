@@ -352,7 +352,8 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
       return $this->setParameter('test_endpoint',$value);
     }
 
-    public function getTestEndPoint(){
+    public function getTestEndPoint()
+    {
       return $this->getParameter('test_endpoint');
     }
 
