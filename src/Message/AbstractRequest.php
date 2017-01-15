@@ -332,20 +332,32 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->response = new DirectPostResponse($this, $httpResponse->getBody());
     }
 
-    public function setEndpoint($value)
+    public function isLive()
     {
-        return $this->setParameter('endpoint', $value);
+      return $this->getParameter('live');
     }
 
-    public function isLive(){
-      return $this->getParameter('live');
+    public function setLiveEndPoint($value)
+    {
+      return $this->setParameter('live_endpoint',$value);
+    }
+
+    public function getLiveEndPoint()
+    {
+      return $this->getParameter('live_endpoint');
+    }
+
+    public function setTestEndPoint($value)
+    {
+      return $this->setParameter('test_endpoint',$value);
+    }
+
+    public function getTestEndPoint(){
+      return $this->getParameter('test_endpoint');
     }
 
     public function getEndpoint()
     {
-        if($this->isLive()){
-          return $this->live_endpoint;
-        }
-        return $this->test_endpoint;
+        return $this->isLive() ? $this->live_endpoint : $this->test_endpoint;
     }
 }
