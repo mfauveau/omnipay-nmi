@@ -6,7 +6,8 @@ namespace Omnipay\NMI\Message;
 */
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
-    protected $endpoint = 'https://secure.nmi.com/api/transact.php';
+    protected $test_endpoint = 'https://pcisecure.diamondmindschools.com/api/transact.php';
+    protected $live_endpoint = 'https://secure.nmi.com/api/transact.php';
 
     public function getUsername()
     {
@@ -336,8 +337,15 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('endpoint', $value);
     }
 
+    public function isLive(){
+      return $this->getParameter('live');
+    }
+
     public function getEndpoint()
     {
-        return $this->endpoint;
+        if($this->isLive()){
+          return $this->live_endpoint;
+        }
+        return $this->test_endpoint;
     }
 }
