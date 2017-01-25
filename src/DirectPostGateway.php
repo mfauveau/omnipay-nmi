@@ -27,7 +27,7 @@ class DirectPostGateway extends AbstractGateway
         return array(
             'username' => '',
             'password' => '',
-            'live' => FALSE
+            'live' => false
         );
     }
 
