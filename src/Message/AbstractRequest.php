@@ -334,27 +334,27 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
     public function isLive()
     {
-      return $this->getParameter('live');
+        return $this->getParameter('live');
     }
 
     public function setLiveEndPoint($value)
     {
-      return $this->setParameter('live_endpoint',$value);
+        return $this->setParameter('live_endpoint', $value);
     }
 
     public function getLiveEndPoint()
     {
-      return $this->getParameter('live_endpoint');
+        return $this->getParameter('live_endpoint');
     }
 
     public function setTestEndPoint($value)
     {
-      return $this->setParameter('test_endpoint',$value);
+        return $this->setParameter('test_endpoint', $value);
     }
 
     public function getTestEndPoint()
     {
-      return $this->getParameter('test_endpoint');
+        return $this->getParameter('test_endpoint');
     }
 
     public function getEndpoint()
