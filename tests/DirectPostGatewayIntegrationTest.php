@@ -28,10 +28,10 @@ class DirectPostGatewayIntegrationTest extends GatewayTestCase
         $this->gateway->setUsername('demo');
         $this->gateway->setPassword('password');
 
-        $this->purchaseOptions = [
+        $this->purchaseOptions = array(
             'amount'=>'10.00',
             'card'=>$this->getValidCard()
-        ];
+        );
     }
 
     /**
@@ -44,10 +44,10 @@ class DirectPostGatewayIntegrationTest extends GatewayTestCase
         $this->assertTrue($response->isSuccessful());
         $this->assertEquals('SUCCESS', $response->getMessage());
 
-        $captureResponse = $this->gateway->capture([
+        $captureResponse = $this->gateway->capture(array(
             'amount'=>'10.00',
             'transactionReference'=>$response->getTransactionReference()
-        ])->send();
+        ))->send();
 
         $this->assertTrue($captureResponse->isSuccessful());
         $this->assertEquals('SUCCESS', $captureResponse->getMessage());
@@ -63,9 +63,9 @@ class DirectPostGatewayIntegrationTest extends GatewayTestCase
         $this->assertTrue($response->isSuccessful());
         $this->assertEquals('SUCCESS', $response->getMessage());
 
-        $refundResponse = $this->gateway->refund([
+        $refundResponse = $this->gateway->refund(array(
             'transactionReference'=>$response->getTransactionReference()
-        ])->send();
+        ))->send();
 
         $this->assertTrue($refundResponse->isSuccessful());
         $this->assertEquals('SUCCESS', $refundResponse->getMessage());
@@ -81,9 +81,9 @@ class DirectPostGatewayIntegrationTest extends GatewayTestCase
         $this->assertTrue($response->isSuccessful());
         $this->assertEquals('SUCCESS', $response->getMessage());
 
-        $voidResponse = $this->gateway->void([
+        $voidResponse = $this->gateway->void(array(
             'transactionReference'=>$response->getTransactionReference()
-        ])->send();
+        ))->send();
 
         $this->assertTrue($voidResponse->isSuccessful());
         $this->assertEquals('Transaction Void Successful', $voidResponse->getMessage());
