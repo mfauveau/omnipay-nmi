@@ -161,12 +161,12 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
     public function getOrderDescription()
     {
-        return $this->getParameter('orderdescription');
+        return $this->getParameter('description');
     }
 
     public function setOrderDescription($value)
     {
-        return $this->setParameter('orderdescription', $value);
+        return $this->setParameter('description', $value);
     }
 
     public function getTax()
