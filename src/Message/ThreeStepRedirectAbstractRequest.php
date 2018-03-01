@@ -261,7 +261,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
         $document = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><'.$this->type.'/>');
         $this->arrayToXml($document, $data);
 
-        $httpRequest = $this->httpClient->post(
+        $httpResponse = $this->httpClient->post(
             $this->getEndpoint(),
             array(
                 'Content-Type' => 'text/xml',
@@ -270,9 +270,9 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
             $document->asXML()
         );
 
-        $httpResponse = $httpRequest->send();
+        $xml = \Omnipay\Common\Http\ResponseParser::xml($httpResponse);
 
-        return $this->response = new ThreeStepRedirectResponse($this, $httpResponse->xml());
+        return $this->response = new ThreeStepRedirectResponse($this, $xml);
     }
 
     /**
