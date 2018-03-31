@@ -271,9 +271,55 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
             $document->asXML()
         );
 
-        $xml = \Omnipay\Common\Http\ResponseParser::xml($httpResponse);
+        $xml = static::xmlDecode($httpResponse);
 
         return $this->response = new ThreeStepRedirectResponse($this, $xml);
+    }
+
+    /**
+     * Parse the XML response body and return a \SimpleXMLElement.
+     *
+     * In order to prevent XXE attacks, this method disables loading external
+     * entities. If you rely on external entities, then you must parse the
+     * XML response manually by accessing the response body directly.
+     *
+     * Copied from Response->xml() in Guzzle3 (copyright @mtdowling)
+     * @link https://github.com/guzzle/guzzle3/blob/v3.9.3/src/Guzzle/Http/Message/Response.php
+     *
+     * @param  string|ResponseInterface $response
+     * @return \SimpleXMLElement
+     * @throws RuntimeException if the response body is not in XML format
+     * @link http://websec.io/2012/08/27/Preventing-XXE-in-PHP.html
+     *
+     */
+    public static function xmlDecode($response)
+    {
+        if ($response instanceof \Psr\Http\Message\ResponseInterface) {
+            $body = $response->getBody()->__toString();
+        } else {
+            $body = (string) $response;
+        }
+
+        $errorMessage = null;
+        $internalErrors = libxml_use_internal_errors(true);
+        $disableEntities = libxml_disable_entity_loader(true);
+        libxml_clear_errors();
+
+        try {
+            $xml = new \SimpleXMLElement((string) $body ?: '<root />', LIBXML_NONET);
+        } catch (\Exception $e) {
+            $errorMessage = $e->getMessage();
+        }
+
+        libxml_clear_errors();
+        libxml_use_internal_errors($internalErrors);
+        libxml_disable_entity_loader($disableEntities);
+
+        if ($errorMessage !== null) {
+            throw new \InvalidArgumentException('SimpleXML error: ' . $errorMessage);
+        }
+
+        return $xml;
     }
 
     /**
