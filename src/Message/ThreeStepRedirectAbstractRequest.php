@@ -261,7 +261,8 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
         $document = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><'.$this->type.'/>');
         $this->arrayToXml($document, $data);
 
-        $httpResponse = $this->httpClient->post(
+        $httpResponse = $this->httpClient->request(
+            'POST',
             $this->getEndpoint(),
             array(
                 'Content-Type' => 'text/xml',
