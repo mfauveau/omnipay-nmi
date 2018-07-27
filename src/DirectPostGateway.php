@@ -26,8 +26,7 @@ class DirectPostGateway extends AbstractGateway
     {
         return array(
             'username' => '',
-            'password' => '',
-            'live' => false
+            'password' => ''
         );
     }
 
@@ -80,23 +79,6 @@ class DirectPostGateway extends AbstractGateway
     public function setProcessorId($value)
     {
         return $this->setParameter('processor_id', $value);
-    }
-
-    /**
-     * @return boolean
-     */
-    public function getLive()
-    {
-        return $this->getParameter('live');
-    }
-
-    /**
-     * @param boolean $value
-     * @return $this
-     */
-    public function setLive($value)
-    {
-        return $this->setParameter('live', $value);
     }
 
     /**
