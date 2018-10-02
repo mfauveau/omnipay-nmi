@@ -343,6 +343,6 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
     public function getEndpoint()
     {
-        return $this->endpoint;
+        return $this->getParameter('endpoint') ?: $this->endpoint;
     }
 }
