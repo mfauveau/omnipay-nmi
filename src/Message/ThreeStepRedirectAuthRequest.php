@@ -82,6 +82,10 @@ class ThreeStepRedirectAuthRequest extends ThreeStepRedirectAbstractRequest
             'amount'       => $this->getAmount(),
         );
 
+        if ($this->getCurrency()) {
+            $data['currency'] = $this->getCurrency();
+        }
+
         if ($this->getDupSeconds()) {
             $data['dup-seconds'] = $this->getDupSeconds();
         }
@@ -104,6 +108,11 @@ class ThreeStepRedirectAuthRequest extends ThreeStepRedirectAbstractRequest
 
         if ($this->getCardReference()) {
             $data['customer-vault-id'] = $this->getCardReference();
+
+            // Customer Vault operations can be completed using a single Direct XML request to the gateway.
+            // None of these operations submit sensitive payment information and theorefore do not require
+            // any Three Step Redirect functionlity.
+            unset($data['redirect-url']);
         }
         else {
             $data = array_merge(
