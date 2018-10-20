@@ -18,7 +18,7 @@ class DirectPostAuthRequest extends AbstractRequest
         if ($this->getCardReference()) {
             $data['customer_vault_id'] = $this->getCardReference();
 
-            return $data;
+           return array_merge($data, $this->getOrderData());
         } else {
             $this->getCard()->validate();
 
