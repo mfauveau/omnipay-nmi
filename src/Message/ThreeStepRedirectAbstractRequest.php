@@ -102,7 +102,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
     /**
      * @return string
      */
-    public function getMerchantDefinedField1()
+    public function getMerchantDefinedField_1()
     {
         return $this->getParameter('merchant_defined_field_1');
     }
@@ -113,7 +113,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
      * @param string
      * @return AbstractRequest Provides a fluent interface
      */
-    public function setMerchantDefinedField1($value)
+    public function setMerchantDefinedField_1($value)
     {
         return $this->setParameter('merchant_defined_field_1', $value);
     }
@@ -121,7 +121,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
     /**
      * @return string
      */
-    public function getMerchantDefinedField2()
+    public function getMerchantDefinedField_2()
     {
         return $this->getParameter('merchant_defined_field_2');
     }
@@ -132,7 +132,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
      * @param string
      * @return AbstractRequest Provides a fluent interface
      */
-    public function setMerchantDefinedField2($value)
+    public function setMerchantDefinedField_2($value)
     {
         return $this->setParameter('merchant_defined_field_2', $value);
     }
@@ -140,7 +140,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
     /**
      * @return string
      */
-    public function getMerchantDefinedField3()
+    public function getMerchantDefinedField_3()
     {
         return $this->getParameter('merchant_defined_field_3');
     }
@@ -151,7 +151,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
      * @param string
      * @return AbstractRequest Provides a fluent interface
      */
-    public function setMerchantDefinedField3($value)
+    public function setMerchantDefinedField_3($value)
     {
         return $this->setParameter('merchant_defined_field_3', $value);
     }
@@ -159,7 +159,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
     /**
      * @return string
      */
-    public function getMerchantDefinedField4()
+    public function getMerchantDefinedField_4()
     {
         return $this->getParameter('merchant_defined_field_4');
     }
@@ -170,7 +170,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
      * @param string
      * @return AbstractRequest Provides a fluent interface
      */
-    public function setMerchantDefinedField4($value)
+    public function setMerchantDefinedField_4($value)
     {
         return $this->setParameter('merchant_defined_field_4', $value);
     }

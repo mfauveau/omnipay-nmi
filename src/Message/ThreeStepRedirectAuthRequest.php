@@ -90,20 +90,20 @@ class ThreeStepRedirectAuthRequest extends ThreeStepRedirectAbstractRequest
             $data['dup-seconds'] = $this->getDupSeconds();
         }
 
-        if ($this->getMerchantDefinedField1()) {
-            $data['merchant-defined-field-1'] = $this->getMerchantDefinedField1();
+        if ($this->getMerchantDefinedField_1()) {
+            $data['merchant-defined-field-1'] = $this->getMerchantDefinedField_1();
         }
 
-        if ($this->getMerchantDefinedField2()) {
-            $data['merchant-defined-field-2'] = $this->getMerchantDefinedField2();
+        if ($this->getMerchantDefinedField_2()) {
+            $data['merchant-defined-field-2'] = $this->getMerchantDefinedField_2();
         }
 
-        if ($this->getMerchantDefinedField3()) {
-            $data['merchant-defined-field-3'] = $this->getMerchantDefinedField3();
+        if ($this->getMerchantDefinedField_3()) {
+            $data['merchant-defined-field-3'] = $this->getMerchantDefinedField_3();
         }
 
-        if ($this->getMerchantDefinedField4()) {
-            $data['merchant-defined-field-4'] = $this->getMerchantDefinedField4();
+        if ($this->getMerchantDefinedField_4()) {
+            $data['merchant-defined-field-4'] = $this->getMerchantDefinedField_4();
         }
 
         if ($this->getCardReference()) {
