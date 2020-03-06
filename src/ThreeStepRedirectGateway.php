@@ -135,7 +135,7 @@ class ThreeStepRedirectGateway extends DirectPostGateway
 
     /**
      * @param array
-     * @return \Omnipay\NMI\Message\CreateCardRequest
+     * @return \Omnipay\NMI\Message\ThreeStepRedirectCreateCardRequest
      */
     public function createCard(array $parameters = array())
     {
@@ -144,7 +144,7 @@ class ThreeStepRedirectGateway extends DirectPostGateway
 
     /**
      * @param array
-     * @return \Omnipay\NMI\Message\UpdateCardRequest
+     * @return \Omnipay\NMI\Message\ThreeStepRedirectUpdateCardRequest
      */
     public function updateCard(array $parameters = array())
     {
@@ -153,7 +153,7 @@ class ThreeStepRedirectGateway extends DirectPostGateway
 
     /**
      * @param array
-     * @return \Omnipay\NMI\Message\DeleteCardRequest
+     * @return \Omnipay\NMI\Message\ThreeStepRedirectDeleteCardRequest
      */
     public function deleteCard(array $parameters = array())
     {

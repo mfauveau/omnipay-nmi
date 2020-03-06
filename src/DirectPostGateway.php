@@ -363,7 +363,7 @@ class DirectPostGateway extends AbstractGateway
 
     /**
      * @param array $parameters
-     * @return \Omnipay\NMI\Message\CreateCardRequest
+     * @return \Omnipay\NMI\Message\DirectPostCreateCardRequest
      */
     public function createCard(array $parameters = array())
     {
@@ -372,7 +372,7 @@ class DirectPostGateway extends AbstractGateway
 
     /**
      * @param array $parameters
-     * @return \Omnipay\NMI\Message\UpdateCardRequest
+     * @return \Omnipay\NMI\Message\DirectPostUpdateCardRequest
      */
     public function updateCard(array $parameters = array())
     {
@@ -381,7 +381,7 @@ class DirectPostGateway extends AbstractGateway
 
     /**
      * @param array $parameters
-     * @return \Omnipay\NMI\Message\DeleteCardRequest
+     * @return \Omnipay\NMI\Message\DirectPostDeleteCardRequest
      */
     public function deleteCard(array $parameters = array())
     {
